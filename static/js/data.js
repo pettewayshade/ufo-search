@@ -996,5 +996,15 @@ var data = [{
     shape: "unknown",
     durationMinutes: "4 minutes",
     comments: "Bright orange object&#44 rapid speed and direction changes .."
+  },
+
+  {
+    datetime: "9/13/1993",
+    city: "greenville",
+    state: "nc",
+    country: "us",
+    shape: "round",
+    durationMinutes: "24 hrs",
+    comments: "Beautiful like Shade.."
   }
 ];
