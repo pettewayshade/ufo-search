@@ -22,7 +22,6 @@ submit.on("click", function() {
     d3.event.preventDefault()
     // filter the table
     filteredData = tableData.filter(filterOn)
-    console.log(filteredData)
     if (!filteredData.length){alert("No data for your search criteria.")}
     else{createTable(filteredData)}
 })
