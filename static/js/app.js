@@ -6,8 +6,10 @@ var submit = d3.select("#filter-btn");
 
 // func to get values to filter on
 function filterOn(object) {
+    // array of keys
     filterKeys = ["datetime", "city", "country", "state", "shape"]
     var matched = true;
+    // for each key see if there is a match
     filterKeys.forEach((key) => {
         filter = d3.select(`#${key}`).property("value");
         filter = new RegExp(filter);
@@ -22,15 +24,16 @@ submit.on("click", function() {
     d3.event.preventDefault()
     // filter the table
     filteredData = tableData.filter(filterOn)
+    // if data isn't found return msg else create table
     if (!filteredData.length){alert("No data for your search criteria.")}
     else{createTable(filteredData)}
 })
 
 // func to create table
-function createTable(objects) {
+function createTable(object) {
     var tbody = d3.select("tbody");
     tbody.html("")
-    objects.forEach((element) => {
+    object.forEach((element) => {
         var tr = tbody.append("tr");
         Object.entries(element).forEach(([key, value]) => {
             var cell = tr.append("td");
