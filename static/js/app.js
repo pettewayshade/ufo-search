@@ -7,12 +7,12 @@ var submit = d3.select("#filter-btn");
 // func to get values to filter on
 function filterOn(object) {
     // array of keys
-    filterKeys = ["datetime", "city", "country", "state", "shape"]
+    var filterKeys = ["datetime", "city", "country", "state", "shape"];
     var matched = true;
     // for each key see if there is a match
     filterKeys.forEach((key) => {
-        filter = d3.select(`#${key}`).property("value");
-        filter = new RegExp(filter);
+        var filter = d3.select(`#${key}`).property("value");
+        var filter = new RegExp(filter);
         if (!object[key].match(filter)) {matched = false}
     })
     return matched
@@ -23,7 +23,7 @@ submit.on("click", function() {
     // prevents page from refreshing
     d3.event.preventDefault()
     // filter the table
-    filteredData = tableData.filter(filterOn)
+    var filteredData = tableData.filter(filterOn);
     // if data isn't found return msg else create table
     if (!filteredData.length){alert("No data for your search criteria.")}
     else{createTable(filteredData)}
