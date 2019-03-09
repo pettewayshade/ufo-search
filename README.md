@@ -9,5 +9,5 @@
 - Files
   - static/app.js > js file used to handle button event and retrieve data
   - static/data.js > file that contains array of keys and values
-  - index.html > stanard html file 
+  - index.html > standard html file 
   
